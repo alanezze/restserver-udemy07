@@ -20,7 +20,7 @@ app.use(bodyParser.json())
 
 //de esta manera ikmportamos y usamos las rutas del usuario
 app.use(require('./routes/usuario'));
-
+app.use(require('./routes/login'));
 
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: true },
     (err, res) => {
