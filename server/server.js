@@ -17,6 +17,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
     // parse application/json
 app.use(bodyParser.json())
+let a;
 
 //de esta manera ikmportamos y usamos las rutas del usuario
 app.use(require('./routes/usuario'));
