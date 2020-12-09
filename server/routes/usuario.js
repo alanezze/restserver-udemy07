@@ -16,7 +16,7 @@ const Usuario = require('../models/usuario');
 
 
 
-/*
+
 app.get('/usuario', function(req, res) {
 
     let desde = req.query.desde || 0; //parametro opcional desde que pagina arranca, si no llega el param es 0
@@ -53,7 +53,7 @@ app.get('/usuario', function(req, res) {
 
         })
 })
-*/
+
 app.post('/usuario', function(req, res) {
 
     ///obtenemos toda la info del post
