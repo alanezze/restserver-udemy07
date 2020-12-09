@@ -160,40 +160,85 @@ app.delete('/usuario/:id', function(req, res) {
 })*/
 
 
-/*
-app.delete('/usuario/:id', (req, res) => {
+app.delete('/usuario/:id', function(req, res) {
+
+
     let id = req.params.id;
 
-    let body = _.pick(req.body, 'estado');
+    // Usuario.findByIdAndRemove(id, (err, usuarioBorrado) => {
 
-    /* if ({ estado: false }) {
-         //el return es por si entra al error sale yd eja de ejecutar el js
-         return res.status(400).json(({
-             ok: false,
-             err: {
-                 message: `El usuario ya esta eliminado`
-             }
-         }));
-     }
+    let cambiaEstado = {
+        estado: false
+    };
+
+    Usuario.findByIdAndUpdate(id, cambiaEstado, { new: true }, (err, usuarioBorrado) => {
+
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        };
+
+        if (!usuarioBorrado) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: 'Usuario no encontrado'
+                }
+            });
+        }
+
+        res.json({
+            ok: true,
+            usuario: usuarioBorrado
+        });
+
+    });
+
+
+
+});
+/*
+
+app.delete('/usuario/:id', function(req, res) {
+    let id = req.params.id;
     let cambiaestado = {
         estado: false
     };
-    Usuario.findByIdAndUpdate(id, body cambiaestado, { new: true, runValidators: true }, (err, deleteLogic) => {
+
+    if ({ estado: false }) {
+        //el return es por si entra al error sale yd eja de ejecutar el js
+        return res.status(400).json(({
+            ok: false,
+            err: {
+                message: `El usuario ya esta eliminado`
+            }
+        }));
+    }
+
+    Usuario.findByIdAndUpdate(id, cambiaestado, { new: true }, (err, usuarioBorrado) => {
         if (err) {
             //el return es por si entra al error sale yd eja de ejecutar el js
-            return res.status(400).json(({
+            return res.status(400).json({
                 ok: false,
                 err
+            });
+        }
+        if (!usuarioBorrado) {
+            return res.status(400).json(({
+                ok: false,
+                err: {
+                    message: `Usuario no encontrado`
+                }
             }));
         }
-
 
         res.json({
             ok: true,
             usuario: deleteLogic
         });
     });
-
 })
 */
 
