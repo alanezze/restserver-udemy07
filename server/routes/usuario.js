@@ -160,7 +160,7 @@ app.delete('/usuario/:id', function(req, res) {
 })*/
 
 
-
+/*
 app.delete('/usuario/:id', (req, res) => {
     let id = req.params.id;
 
@@ -174,11 +174,11 @@ app.delete('/usuario/:id', (req, res) => {
                  message: `El usuario ya esta eliminado`
              }
          }));
-     }*/
+     }
     let cambiaestado = {
         estado: false
     };
-    Usuario.findByIdAndUpdate(id, /*body*/ cambiaestado, { new: true, runValidators: true }, (err, deleteLogic) => {
+    Usuario.findByIdAndUpdate(id, body cambiaestado, { new: true, runValidators: true }, (err, deleteLogic) => {
         if (err) {
             //el return es por si entra al error sale yd eja de ejecutar el js
             return res.status(400).json(({
@@ -195,5 +195,6 @@ app.delete('/usuario/:id', (req, res) => {
     });
 
 })
+*/
 
 module.exports = app;
