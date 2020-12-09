@@ -161,7 +161,7 @@ app.delete('/usuario/:id', function(req, res) {
 
 
 
-app.delete('/usuario/:id', function(req, res) {
+app.delete('/usuario/:id', (req, res) => {
     let id = req.params.id;
 
     let body = _.pick(req.body, 'estado');
@@ -177,7 +177,7 @@ app.delete('/usuario/:id', function(req, res) {
      }*/
     let cambiaestado = {
         estado: false
-    }
+    };
     Usuario.findByIdAndUpdate(id, /*body*/ cambiaestado, { new: true, runValidators: true }, (err, deleteLogic) => {
         if (err) {
             //el return es por si entra al error sale yd eja de ejecutar el js
@@ -191,10 +191,9 @@ app.delete('/usuario/:id', function(req, res) {
         res.json({
             ok: true,
             usuario: deleteLogic
-
         });
-    })
+    });
 
 })
 
-= app;
+module.exports = app;
