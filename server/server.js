@@ -23,7 +23,11 @@ let a;
 app.use(require('./routes/usuario'));
 app.use(require('./routes/login'));
 
+<<<<<<< HEAD
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, },
+=======
+mongoose.connect(process.env.URLDB, { useNewUrlParser: true,  useUnifiedTopology: true },
+>>>>>>> 92490c9d7b59a84cc103ba52773fc862efbf5125
     (err, res) => {
         if (err) throw err;
         console.log('base de datos ONLINE');
