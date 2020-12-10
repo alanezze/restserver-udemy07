@@ -1,4 +1,5 @@
-require('./config/config')
+//va al principio para configurar los puertos y el process  apenas inicie server.js
+require('./config/config');
 
 const express = require('express')
 
@@ -9,7 +10,6 @@ const mongoose = require('mongoose')
 
 
 const app = express()
-const port = process.env.PORT
 
 
 const bodyParser = require('body-parser')
@@ -30,6 +30,6 @@ mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: tru
     })
 
 
-app.listen(port, () => {
-    console.log(`escuchando puerto ${port}`);
+app.listen(process.env.PORT, () => {
+    console.log('escuchando puerto ', process.env.PORT);
 })

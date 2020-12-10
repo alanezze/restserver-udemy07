@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 //METODO PARA ESCRIPTAR DATOS CON UN HASH DE UNA SOLA VIA , ES DECIR
 //QUE PRO AMS QUE RECONSTRUYAN LOS DATOS DE LA DB NO OBTENDRA LA CONTRASENIA CON npm i bcrypt
