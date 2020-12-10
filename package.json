@@ -17,14 +17,5 @@
         "nodemon": "^2.0.6",
         "underscore": "^1.11.0"
     },
-    "devDependencies": {},
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/alanezze/node-restserver-curso.git"
-    },
-    "bugs": {
-        "url": "https://github.com/alanezze/node-restserver-curso/issues"
-    },
-    "homepage": "https://github.com/alanezze/node-restserver-curso#readme",
-    "description": ""
+    "devDependencies": {}
 }
