@@ -41,7 +41,7 @@ app.get('/usuario', function(req, res) {
 
             //para contar la cantidad de registros
             //la condicion debe ser identica a la del find para que cuente lo msimo
-            Usuario.count({ estado: true }, (err, conteo) => {
+            Usuario.countDocuments({ estado: true }, (err, conteo) => {
                 //ahora loq ue queremos regresar
                 res.json({
                     ok: true, //es devolver un 200 como convencion
