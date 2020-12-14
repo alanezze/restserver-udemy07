@@ -25,7 +25,11 @@ app.use(require('./routes/login'));
 
 
 
-mongoose.connect(process.env.URLDB, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },
+mongoose.connect(process.env.URLDB, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+        useCreateIndex: true
+    },
     (err, res) => {
         if (err) throw err;
         console.log('base de datos ONLINE');
