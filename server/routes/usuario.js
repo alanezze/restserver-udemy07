@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+
 
 //METODO PARA ESCRIPTAR DATOS CON UN HASH DE UNA SOLA VIA , ES DECIR
 //QUE PRO AMS QUE RECONSTRUYAN LOS DATOS DE LA DB NO OBTENDRA LA CONTRASENIA CON npm i bcrypt
@@ -14,7 +14,7 @@ const _ = require('underscore');
 //etso hacemos para maenjar el modelo del schema
 const Usuario = require('../models/usuario');
 
-
+const app = express();
 
 
 app.get('/usuario', function(req, res) {
@@ -35,7 +35,7 @@ app.get('/usuario', function(req, res) {
                 //el return es por si entra al error sale yd eja de ejecutar el js
                 return res.status(400).json(({
                     ok: false,
-                    err
+                    err: err.message
                 }));
             }
 
@@ -242,4 +242,4 @@ app.delete('/usuario/:id', function(req, res) {
 })
 */
 
-module.exports = app;
+module.exports
