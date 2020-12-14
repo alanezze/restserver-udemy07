@@ -9,8 +9,6 @@ const bcrypt = require('bcrypt');
 const _ = require('underscore');
 
 
-
-
 //etso hacemos para maenjar el modelo del schema
 const Usuario = require('../models/usuario');
 
@@ -35,7 +33,7 @@ app.get('/usuario', function(req, res) {
                 //el return es por si entra al error sale yd eja de ejecutar el js
                 return res.status(400).json(({
                     ok: false,
-                    err: err.message
+                    err
                 }));
             }
 
@@ -242,4 +240,4 @@ app.delete('/usuario/:id', function(req, res) {
 })
 */
 
-module.exports
+module.exports = app;
