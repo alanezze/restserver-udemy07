@@ -1,5 +1,5 @@
 //va al principio para configurar los puertos y el process  apenas inicie server.js
-require('./config/config');
+require('./config/config.js');
 
 const express = require('express');
 
@@ -25,6 +25,7 @@ mongoose.connect(process.env.URLDB, {
         useCreateIndex: true
     },
     (err, res) => {
+        if (err) throw err;
         console.log('base de datos ONLINE', process.env.URLDB);
     })
 
