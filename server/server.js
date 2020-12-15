@@ -25,7 +25,6 @@ mongoose.connect(process.env.URLDB, {
         useCreateIndex: true
     },
     (err, res) => {
-        if (err) throw err;
         console.log('base de datos ONLINE', process.env.URLDB);
     })
 
